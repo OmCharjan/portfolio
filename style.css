@@ -207,3 +207,21 @@ body::before {
     background: rgba(127,124,255,0.15);
     transform: translateY(-2px);
 }
+/* ALL LINKS – GLOBAL */
+a {
+    color: #dfe0ab;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+/* PROJECT LINKS */
+.projects a {
+    display: inline-block;
+    margin-right: 12px;
+    margin-top: 10px;
+    font-size: 14px;
+}
