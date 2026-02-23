@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #1a1a2e, #050510 70%);
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* SOFT BACKGROUND GLOW */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(600px 300px at 20% 10%, rgba(127,124,255,0.18), transparent 60%),
+        radial-gradient(500px 300px at 80% 20%, rgba(79,70,229,0.15), transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    justify-content: center;
+    padding: 22px 0;
+}
+
+.nav a {
+    color: #c7c7ff;
+    margin: 0 18px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* HERO */
+.hero {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px;
+}
+
+.hero-card {
+    position: relative;
+    background: rgba(255,255,255,0.06);
+    padding: 70px 60px 60px;
+    border-radius: 22px;
+    max-width: 560px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0 40px 90px rgba(0,0,0,0.7);
+    backdrop-filter: blur(14px);
+    transition: transform 0.2s ease;
+}
+
+.hero-card::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(127,124,255,0.35), transparent 70%);
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(32px);
+    z-index: 0;
+}
+
+.profile-pic {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 26px;
+    position: relative;
+    z-index: 1;
+
+    border: 3px solid rgba(127,124,255,0.7);
+    box-shadow:
+        0 0 0 10px rgba(127,124,255,0.18),
+        0 0 35px rgba(127,124,255,0.45),
+        0 25px 60px rgba(0,0,0,0.75);
+}
+
+.hero-card h1 {
+    font-size: 46px;
+    margin-bottom: 14px;
+}
+
+.hero-card p {
+    color: #cfcfff;
+    font-size: 16px;
+    margin-bottom: 28px;
+}
+
+.hero-btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #7f7cff, #4f46e5);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* SECTIONS */
+.section {
+    position: relative;
+    max-width: 1000px;
+    margin: 90px auto;
+    padding: 60px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 22px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.6);
+}
+
+.section::after {
+    content: "";
+    position: absolute;
+    inset: -30px;
+    background: radial-gradient(circle, rgba(127,124,255,0.25), transparent 70%);
+    filter: blur(45px);
+    z-index: -1;
+}
+
+.section h2 {
+    margin-bottom: 16px;
+}
+
+/* SKILLS */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.skills span {
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+/* PROJECTS */
+.projects {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    perspective: 1200px;
+}
+
+.card {
+    width: 260px;
+    padding: 30px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+}
+
+.card p {
+    color: #bdbdff;
+    font-size: 14px;
+}
+
+/* CONTACT */
+#contact p {
+    margin-top: 10px;
+    color: #cfcfff;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero-card {
+        padding: 60px 30px;
+    }
+
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.resume-btn {
+    margin-top: 14px;
+    padding: 10px 26px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+
+    color: #cfcfff;
+    border: 1px solid rgba(127,124,255,0.5);
+    background: rgba(255,255,255,0.03);
+
+    transition: all 0.25s ease;
+}
+
+.resume-btn:hover {
+    background: rgba(127,124,255,0.15);
+    transform: translateY(-2px);
+}
